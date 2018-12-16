@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 
 services:
   nginx-proxy:
@@ -12,3 +12,13 @@ services:
     image: jwilder/whoami
     environment:
       - VIRTUAL_HOST=whoami.local
+
+  everydayweekend.net:
+    image: crccheck/hello-world:latest
+    environment:
+      - VIRTUAL_HOST=everydayweekend.net
+
+  constantlyunderdressed.party:
+    image: karthequian/helloworld:latest
+    environment:
+      - VIRTUAL_HOST=constantlyunderdressed.party
