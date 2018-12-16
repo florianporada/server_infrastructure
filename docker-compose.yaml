@@ -18,10 +18,10 @@ services:
     environment:
       - VIRTUAL_HOST=constantlyunderdressed.party,www.constantlyunderdressed.party
 
-  werputzt.fun:
-    image: florianporada/werputzt.fun:latest
-    environment:
-      - VIRTUAL_HOST=werputzt.fun,www.werputzt.fun
+  # werputzt.fun:
+  #   image: florianporada/werputzt.fun:latest
+  #   environment:
+  #     - VIRTUAL_HOST=werputzt.fun,www.werputzt.fun
 
   kitt.cool:
     image: florianporada/kitt.cool:latest
