@@ -17,6 +17,7 @@ services:
     image: crccheck/hello-world:latest
     environment:
       - VIRTUAL_HOST=everydayweekend.net
+      - VIRTUAL_PORT=8000
 
   constantlyunderdressed.party:
     image: karthequian/helloworld:latest
