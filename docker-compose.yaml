@@ -8,18 +8,22 @@ services:
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
-  whoami:
-    image: jwilder/whoami
-    environment:
-      - VIRTUAL_HOST=whoami.local
-
   everydayweekend.net:
-    image: crccheck/hello-world:latest
+    image: florianporada/everydayweekend.net:latest
     environment:
-      - VIRTUAL_HOST=everydayweekend.net
-      - VIRTUAL_PORT=8000
+      - VIRTUAL_HOST=everydayweekend.net,www.everydayweekend.net
 
   constantlyunderdressed.party:
     image: karthequian/helloworld:latest
     environment:
-      - VIRTUAL_HOST=constantlyunderdressed.party
+      - VIRTUAL_HOST=constantlyunderdressed.party,www.constantlyunderdressed.party
+
+  werputzt.fun:
+    image: florianporada/werputzt.fun:latest
+    environment:
+      - VIRTUAL_HOST=werputzt.fun,www.werputzt.fun
+
+  kitt.cool:
+    image: florianporada/kitt.cool:latest
+    environment:
+      - VIRTUAL_HOST=kitt.cool,www.kitt.cool
