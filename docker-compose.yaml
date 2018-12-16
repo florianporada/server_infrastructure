@@ -14,7 +14,7 @@ services:
       - VIRTUAL_HOST=everydayweekend.net,www.everydayweekend.net
 
   constantlyunderdressed.party:
-    image: karthequian/helloworld:latest
+    image: florianporada/constantlyunderdressed.party:latest
     environment:
       - VIRTUAL_HOST=constantlyunderdressed.party,www.constantlyunderdressed.party
 
