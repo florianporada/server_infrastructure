@@ -2,11 +2,16 @@ version: "2"
 
 services:
   nginx-proxy:
-    image: jwilder/nginx-proxy
+    image: nginx-proxy/nginx-proxy
     ports:
       - "80:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  portfolio.everydayweekend.net:
+    image: florianporada/portfolio:latest
+    environment:
+      - VIRTUAL_HOST=portfolio.everydayweekend.net
 
   everydayweekend.net:
     image: florianporada/everydayweekend.net:latest
