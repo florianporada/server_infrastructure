@@ -9,12 +9,12 @@ services:
       - /var/run/docker.sock:/tmp/docker.sock:ro
 
   portfolio.everydayweekend.net:
-    image: florianporada/portfolio:latest
+    image: florianporada/everydayweekend.net:latest
     environment:
       - VIRTUAL_HOST=portfolio.everydayweekend.net
 
   everydayweekend.net:
-    image: florianporada/everydayweekend.net:latest
+    image: florianporada/portfolio:latest
     environment:
       - VIRTUAL_HOST=everydayweekend.net,www.everydayweekend.net
 
