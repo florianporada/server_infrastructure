@@ -17,6 +17,11 @@ services:
     image: florianporada/everydayweekend.net:latest
     environment:
       - VIRTUAL_HOST=everydayweekend.net,www.everydayweekend.net
+      
+  florianporada.com:
+    image: florianporada/placeholder:latest
+    environment:
+      - VIRTUAL_HOST=florianporada.com,www.florianporada.com
 
   constantlyunderdressed.party:
     image: florianporada/constantlyunderdressed.party:latest
