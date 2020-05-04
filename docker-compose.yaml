@@ -1,12 +1,34 @@
 version: "2"
 
+volumes:
+  certs:
+
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - certs:/etc/nginx/certs:ro
+    network_mode: bridge
+
+  nginx-proxy-letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes_from:
+      - nginx-proxy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - certs:/etc/nginx/certs:rw
+    network_mode: bridge
+
+  ##################################################
+  #                   Hosts                        #
+  ##################################################
 
   portfolio.everydayweekend.net:
     image: florianporada/portfolio:latest
@@ -17,11 +39,12 @@ services:
     image: florianporada/everydayweekend.net:latest
     environment:
       - VIRTUAL_HOST=everydayweekend.net,www.everydayweekend.net
-      
+
   florianporada.com:
     image: florianporada/placeholder:latest
     environment:
       - VIRTUAL_HOST=florianporada.com,www.florianporada.com
+      - LETSENCRYPT_HOST=*.florianporada.com
 
   constantlyunderdressed.party:
     image: florianporada/constantlyunderdressed.party:latest
