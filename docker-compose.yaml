@@ -1,6 +1,10 @@
 version: "2"
 
 volumes:
+  conf:
+  vhost:
+  html:
+  dhparam:
   certs:
 
 services:
@@ -10,8 +14,12 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - conf:/etc/nginx/conf.d
+      - vhost:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - dhparam:/etc/nginx/dhparam
       - certs:/etc/nginx/certs:ro
+      - /var/run/docker.sock:/tmp/docker.sock:ro
     network_mode: bridge
 
   nginx-proxy-letsencrypt:
