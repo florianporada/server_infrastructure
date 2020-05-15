@@ -36,7 +36,9 @@ services:
   portfolio.everydayweekend.net:
     image: florianporada/portfolio:latest
     environment:
+      - VIRTUAL_PORT=80
       - VIRTUAL_HOST=portfolio.everydayweekend.net
+      - LETSENCRYPT_HOST=portfolio.everydayweekend.net
 
   everydayweekend.net:
     image: florianporada/everydayweekend.net:latest
@@ -44,7 +46,7 @@ services:
       - VIRTUAL_HOST=everydayweekend.net,www.everydayweekend.net
 
   florianporada.com:
-    image: florianporada/placeholder:latest
+    image: florianporada/florianporada.com:latest
     environment:
       - VIRTUAL_PORT=80
       - VIRTUAL_HOST=florianporada.com,www.florianporada.com
