@@ -46,7 +46,7 @@ services:
       - VIRTUAL_HOST=everydayweekend.net,www.everydayweekend.net
 
   florianporada.com:
-    image: florianporada/florianporada.com:latest
+    image: florianporada/placeholder:latest
     environment:
       - VIRTUAL_PORT=80
       - VIRTUAL_HOST=florianporada.com,www.florianporada.com
