@@ -52,6 +52,14 @@ services:
       - VIRTUAL_HOST=florianporada.com,www.florianporada.com
       - LETSENCRYPT_HOST=florianporada.com,www.florianporada.com
 
+  opendatacam.florianporada.com:
+    image: opendatacam/opendatacam-website
+    environment:
+      - VIRTUAL_HOST=opendatacam.florianporada.com
+      - LETSENCRYPT_HOST=opendatacam.florianporada.com
+      # - VIRTUAL_HOST=opendata.cam,www.opendata.cam
+      # - LETSENCRYPT_HOST=opendata.cam,www.opendata.cam
+
   constantlyunderdressed.party:
     image: florianporada/constantlyunderdressed.party:latest
     environment:
