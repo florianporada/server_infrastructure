@@ -58,6 +58,12 @@ services:
       - VIRTUAL_HOST=gbg.florianporada.com
       - LETSENCRYPT_HOST=gbg.florianporada.com
 
+  generativeboard.games:
+    image: florianporada/generativeboard.games
+    environment:
+      - VIRTUAL_HOST=generativeboard.games,www.generativeboard.games
+      - LETSENCRYPT_HOST=generativeboard.games,www.generativeboard.games
+
   constantlyunderdressed.party:
     image: florianporada/constantlyunderdressed.party:latest
     environment:
