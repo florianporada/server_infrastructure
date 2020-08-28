@@ -53,7 +53,7 @@ services:
       - LETSENCRYPT_HOST=florianporada.com,www.florianporada.com
 
   gbg.florianporada.com:
-    image: florianporada/generativeboardgames
+    image: florianporada/gbg.florianporada.com
     environment:
       - VIRTUAL_HOST=gbg.florianporada.com
       - LETSENCRYPT_HOST=gbg.florianporada.com
