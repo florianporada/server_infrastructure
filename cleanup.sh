@@ -7,9 +7,20 @@ logthis() {
 # logthis 'Listing disk usage'
 # du -h / | grep '[0-9\,]\+G'
 
-logthis 'Remove all unused images'
-docker rmi $(docker image ls -aq --filter "dangling=true")
+logthis "Remove all unused images"
+docker_images=$(docker image ls -aq --filter "dangling=true")
+
+if [ -z ${docker_images+x} ]; then
+  logthis "No images to clean"
+else
+  docker rmi $docker_images
+fi
 
 logthis 'Remove all unused containers'
-docker container rm $(docker container ls --filter "status=exited" -aq)
+docker_container = $(docker container ls --filter "status=exited" -aq)
 
+if [ -z ${docker_container+x} ]; then
+  logthis "No container to clean"
+else
+  docker container rm $docker_container
+fi
