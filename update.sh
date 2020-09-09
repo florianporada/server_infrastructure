@@ -45,7 +45,7 @@ fi
 run() {
   logthis "Update service: '$name' with image: '$image'"
   yq w -i ${file} services[${name}].image ${image}
-  docker-compose restart
+  docker-compose restart ${name}
 }
 
 while :; do
