@@ -10,16 +10,16 @@ logthis() {
 logthis "Remove all unused images"
 docker_images=$(docker image ls -aq --filter "dangling=true")
 
-if [ -z ${docker_images+x} ]; then
+if [ -z "$docker_images" ]; then
   logthis "No images to clean"
 else
   docker rmi $docker_images
 fi
 
 logthis 'Remove all unused containers'
-docker_container = $(docker container ls --filter "status=exited" -aq)
+docker_container=$(docker container ls --filter "status=exited" -aq)
 
-if [ -z ${docker_container+x} ]; then
+if [ -z "$docker_container" ]; then
   logthis "No container to clean"
 else
   docker container rm $docker_container
