@@ -57,6 +57,12 @@ services:
     environment:
       - VIRTUAL_HOST=gbg.florianporada.com
       - LETSENCRYPT_HOST=gbg.florianporada.com
+      
+  isblankdesign.florianporada.com:
+    image: florianporada/isblankdesign.florianporada.com
+    environment:
+      - VIRTUAL_HOST=isblankdesign.florianporada.com
+      - LETSENCRYPT_HOST=isblankdesign.florianporada.com
 
   generativeboard.games:
     image: florianporada/generativeboard.games
