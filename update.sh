@@ -4,7 +4,7 @@
 set -e
 
 yq() {
-  docker run --rm -i -v "${PWD}":/workdir mikefarah/yq yq "$@"
+  docker run --rm -i -v "${PWD}":/workdir mikefarah/yq:3.3.4 yq "$@"
 }
 
 logthis() {
@@ -45,7 +45,9 @@ fi
 run() {
   logthis "Update service: '$name' with image: '$image'"
   yq w -i ${file} services[${name}].image ${image}
-  docker-compose restart ${name}
+
+  docker-compose pull ${name}
+  docker-compose up -d --force-recreate ${name}
 }
 
 while :; do
