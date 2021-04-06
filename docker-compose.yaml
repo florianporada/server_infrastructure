@@ -57,12 +57,18 @@ services:
     environment:
       - VIRTUAL_HOST=gbg.florianporada.com
       - LETSENCRYPT_HOST=gbg.florianporada.com
-      
+
   isblankdesign.florianporada.com:
     image: florianporada/isblankdesign.florianporada.com
     environment:
       - VIRTUAL_HOST=isblankdesign.florianporada.com
       - LETSENCRYPT_HOST=isblankdesign.florianporada.com
+
+  mirrormirror.florianporada.com:
+    image: florianporada/mirrormirror.florianporada.com
+    environment:
+      - VIRTUAL_HOST=mirrormirror.florianporada.com
+      - LETSENCRYPT_HOST=mirrormirror.florianporada.com
 
   generativeboard.games:
     image: florianporada/generativeboard.games
@@ -84,3 +90,9 @@ services:
     image: florianporada/kitt.cool:latest
     environment:
       - VIRTUAL_HOST=kitt.cool,www.kitt.cool
+
+  move-lab.space:
+    image: florianporada/move-lab.space:latest
+    environment:
+      - VIRTUAL_HOST=move-lab.space,www.move-lab.space
+      - LETSENCRYPT_HOST=move-lab.space,www.move-lab.space
