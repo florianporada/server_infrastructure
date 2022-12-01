@@ -96,3 +96,9 @@ services:
     environment:
       - VIRTUAL_HOST=move-lab.space,www.move-lab.space
       - LETSENCRYPT_HOST=move-lab.space,www.move-lab.space
+      
+  ai-void.florianporada.com:
+    image: florianporada/ai-void.florianporada.com:latest
+    environment:
+      - VIRTUAL_HOST=ai-void.florianporada.com,www.ai-void.florianporada.com
+      
