@@ -100,5 +100,5 @@ services:
   ai-void.florianporada.com:
     image: florianporada/ai-void.florianporada.com:latest
     environment:
-      - VIRTUAL_HOST=ai-void.florianporada.com,www.ai-void.florianporada.com
-      
+      - VIRTUAL_HOST=ai-void.florianporada.com
+      - LETSENCRYPT_HOST=ai-void.florianporada.com
